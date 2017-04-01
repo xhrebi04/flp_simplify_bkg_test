@@ -3,9 +3,9 @@ SIMPLIFY-BKG TEST
 
 HOW TO RUN SCRIPT
 ===========
-Copy <yourProject>.sh to same directory as tests folder and testMyProject.sh
-chmod +x testMyProject.sh
-./testMyProject.sh
+Copy YOUR_PROJECT.sh to same directory as tests folder and testMyProject.sh  
+chmod +x testMyProject.sh  
+./testMyProject.sh  
 
 IMPORTANT
 ===========
