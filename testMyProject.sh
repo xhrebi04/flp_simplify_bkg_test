@@ -72,7 +72,7 @@ if [ "$?" == "0" ]
     ((ok++))
     rm tests/test04_i.temp
    else
-   	echo -e "[TEST 04] ./simplify-bkg -i tests/test04.in [${RED}BAD${NC}]"
+    echo -e "[TEST 04] ./simplify-bkg -i tests/test04.in [${RED}BAD${NC}]"
 fi
 
 # -1
@@ -85,7 +85,7 @@ if [ "$?" == "0" ]
     ((ok++))
     rm tests/test04_1.temp
    else
-   	echo -e "[TEST 05] ./simplify-bkg -1 tests/test04.in [${RED}BAD${NC}]"
+    echo -e "[TEST 05] ./simplify-bkg -1 tests/test04.in [${RED}BAD${NC}]"
 fi
 
 
@@ -272,9 +272,54 @@ if [ "$?" == "0" ]
   then
     echo -e "[TEST 18] ./simplify-bkg -2 tests/test08.in [${GREEN}OK${NC}]"
     ((ok++))
-    rm tests/test07_2.temp
+    rm tests/test08_2.temp
    else
     echo -e "[TEST 18] ./simplify-bkg -2 tests/test08.in [${RED}BAD${NC}]"
+fi
+
+########################################################
+
+# BKG 6
+
+# -i
+./simplify-bkg -i tests/test09.in > tests/test09_i.temp
+((total++))
+diff tests/test09_i.temp tests/test09.in
+
+if [ "$?" == "0" ]
+  then
+    echo -e "[TEST 19] ./simplify-bkg -i tests/test09.in [${GREEN}OK${NC}]"
+    ((ok++))
+    rm tests/test09_i.temp
+   else
+    echo -e "[TEST 19] ./simplify-bkg -i tests/test09.in [${RED}BAD${NC}]"
+fi
+
+# -1
+./simplify-bkg -1 tests/test09.in > tests/test09_1.temp
+((total++))
+diff tests/test09_1.temp tests/test09_1.out
+if [ "$?" == "0" ]
+  then
+    echo -e "[TEST 20] ./simplify-bkg -1 tests/test09.in [${GREEN}OK${NC}]"
+    ((ok++))
+    rm tests/test09_1.temp
+   else
+    echo -e "[TEST 20] ./simplify-bkg -1 tests/test09.in [${RED}BAD${NC}]"
+fi
+
+
+# -2
+./simplify-bkg -2 tests/test09.in > tests/test09_2.temp
+((total++))
+diff tests/test09_2.temp tests/test09_2.out
+if [ "$?" == "0" ]
+  then
+    echo -e "[TEST 21] ./simplify-bkg -2 tests/test09.in [${GREEN}OK${NC}]"
+    ((ok++))
+    rm tests/test09_2.temp
+   else
+    echo -e "[TEST 21] ./simplify-bkg -2 tests/test09.in [${RED}BAD${NC}]"
 fi
 
 ########################################################
