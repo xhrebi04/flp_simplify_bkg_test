@@ -1,5 +1,6 @@
-S,B
+S,B,C
 a,b
 S
 S->a
 B->b
+C->#
