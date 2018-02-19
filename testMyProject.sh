@@ -10,38 +10,24 @@ NC='\033[0m' # No Color
 total=0
 ok=0
 
-## BAD GRAMMAR TESTS ##
+## BAD GRAMMAR TESTS
 ## TEST01 - TEST 03
 ## TEST01 - bad nonterminal symbol
 ## TEST02 - bad terminal symbol
 ## TEST03 - bad startingnonterminal symbol
 
+
+## OTHER BAD TESTS
+## TEST 09 - starting symbol isnt in NtSet! Empty language.
+
 echo "Starting testing..."
 echo "***********************************************"
-echo -e "[${YEL}******** BAD GRAMMAR TESTING *******${NC}]"
-for (( i=1; i<=3; i++ ))
-do
-  ((total++))
-  ./simplify-bkg -i tests/test0${i}.in > tests/test0${i}_i.temp
-  diff tests/test0${i}_i.temp tests/test0${i}.out  
-
-  if [ "$?" == "0" ]
-    then
-      echo -e "[TEST 0$i] ./simplify-bkg -i tests/test0$i.in [${GREEN}OK${NC}]"
-      ((ok++))
-      rm tests/test0${i}_i.temp
-    else
-      echo -e "[TEST 0$i] ./simplify-bkg -i tests/test0$i.in [${RED}BAD${NC}]"
-  fi
-done
-echo -e "[${YEL}****** END BAD GRAMMAR TESTING *****${NC}]"
-
-for (( i=4; i<=9; i++ ))
+for (( i=1; i<=9; i++ ))
 do
   ((total++))
   # -i
   ./simplify-bkg -i tests/test0${i}.in > tests/test0${i}_i.temp
-  diff tests/test0${i}_i.temp tests/test0${i}.in  
+  diff tests/test0${i}_i.temp tests/test0${i}_i.out  
 
   if [ "$?" == "0" ]
     then
