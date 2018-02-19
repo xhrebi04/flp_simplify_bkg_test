@@ -50,6 +50,19 @@ do
     else
       echo -e "[TEST 0$i] ./simplify-bkg -1 tests/test0${i}.in [${RED}BAD${NC}]"
   fi
+
+  ((total++))
+   # -2
+  ./simplify-bkg -2 tests/test0${i}.in > tests/test0${i}_2.temp
+  diff tests/test0${i}_2.temp tests/test0${i}_2.out
+  if [ "$?" == "0" ]
+    then
+      echo -e "[TEST 0$i] ./simplify-bkg -2 tests/test0${i}.in [${GREEN}OK${NC}]"
+      ((ok++))
+      rm tests/test0${i}_2.temp
+    else
+      echo -e "[TEST 0$i] ./simplify-bkg -2 tests/test0${i}.in [${RED}BAD${NC}]"
+  fi
 done
 
 echo "***********************************************"

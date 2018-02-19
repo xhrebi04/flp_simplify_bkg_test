@@ -1,5 +1,5 @@
-X,S
-a,d,b
+S,X
+a,b,d
 S
 S->bX
 X->ad
