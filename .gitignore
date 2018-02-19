@@ -1,2 +1,5 @@
 makefile
 simplify-bkg.hs
+simplify-bkg
+simplify-bkg.hi
+simplify-bkg.o
