@@ -2,9 +2,9 @@
 
 
 ## HOW TO RUN SCRIPT
-1) Copy YOUR_PROJECT.sh to same directory as tests folder and testMyProject.sh
-2) chmod +x testMyProject.sh  
-3) build your projekt  
+1) Copy YOUR_PROJECT to same directory as tests folder and testMyProject.sh
+2) build your projekt 
+3) chmod +x testMyProject.sh 
 4) ./testMyProject.sh  
 
 ## IMPORTANT
